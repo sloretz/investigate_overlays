@@ -19,5 +19,5 @@ size_t PkgB::pkg_a_size_at_build_time() const
 
 const char * PkgB::pkg_a_workspace_at_build_time() const
 {
-  return PKG_B_WORKSPACE;
+  return PKG_A_WORKSPACE;
 }
