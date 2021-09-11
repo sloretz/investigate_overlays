@@ -1,7 +1,7 @@
 # Case 1
 
 No packages are overlaid.
-The overlay only
+The overlay only adds a new package.
 
 ## Building and running this example
 
