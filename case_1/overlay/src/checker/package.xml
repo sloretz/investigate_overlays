@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>pkg_b</name>
+  <name>checker</name>
   <version>0.0.0</version>
   <description>description</description>
   <maintainer email="osrf@todo.todo">osrf</maintainer>
@@ -9,6 +9,7 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <depend>pkg_a</depend>
+  <depend>pkg_b</depend>
 
   <export>
   </export>

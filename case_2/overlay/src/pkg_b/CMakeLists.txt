@@ -1,15 +1,18 @@
 cmake_minimum_required(VERSION 3.0.2)
 project(pkg_b)
 
-find_package(catkin REQUIRED pkg_a)
+find_package(catkin REQUIRED
+  pkg_a
+)
 
 ###################################
 ## catkin specific configuration ##
 ###################################
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES pkg_b
-  CATKIN_DEPENDS pkg_a
+  LIBRARIES ${PROJECT_NAME}_library
+  CATKIN_DEPENDS
+    pkg_a
 )
 
 ###########
@@ -21,25 +24,21 @@ include_directories(
  ${catkin_INCLUDE_DIRS}
 )
 
-add_library(pkg_b
-  pkg_b.cpp
+add_library(${PROJECT_NAME}_library
+  class.cpp
 )
 
-target_link_libraries(pkg_b
+target_link_libraries(${PROJECT_NAME}_library
   ${catkin_LIBRARIES}
 )
 
 #############
 ## Install ##
 #############
-install(TARGETS pkg_b
-  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
+install(TARGETS ${PROJECT_NAME}_library
+  LIBRARY DESTINATION lib
 )
 
-install(DIRECTORY include/pkg_b/
-  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-  FILES_MATCHING PATTERN "*.h"
-  PATTERN ".svn" EXCLUDE
+install(DIRECTORY include/
+  DESTINATION include
 )
