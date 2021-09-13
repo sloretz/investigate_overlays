@@ -5,7 +5,14 @@ The underlay is extended by the overlay.
 `pkg_b`'s binary artifacts remember information from `pkg_a` in the underlay, causing problems at runtime.
 
 ```
+cd underlay
+. /opt/ros/noetic/setup.bash
 catkin_make install
+. install/setup.bash
+cd ../overlay
+catkin_make install
+. install/setup.bash
+./install/lib/checker/check_overlay
 ```
 
 ## Workspace Arrangement
@@ -44,7 +51,7 @@ Reality: `pkg_b` binary artifacts expect API/ABI of `pkg_a` in underlay
   ---------------│---------│----------
                  │         │  Underlay
   ┌─────┐        │      ┌──┴──┐
-  │pkg_a│------->└──────►pkg_b│
+  │pkg_a│-------►└──────►pkg_b│
   └─────┘               └─────┘
 ```
 
