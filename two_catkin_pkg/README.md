@@ -66,7 +66,7 @@ The desired graph after sourcing the built overlay looks like this:
   └─────┘           └─────┘
 ```
 
-But in realite, `pkg_b` in the underlay still expects the API/ABI of the version of `pkg_a` in the underlay.
+However, `pkg_b` in the underlay still expects the API/ABI of the version of `pkg_a` in the underlay.
 
 ```
   ┌─────┐       ┌───────────────┐
