@@ -16,7 +16,6 @@ catkin_package(
 ###########
 
 include_directories(
-  ${catkin_INCLUDE_DIRS}
   ${pkg_b_INCLUDE_DIRS}
   ${pkg_a_INCLUDE_DIRS}
 )
@@ -24,7 +23,6 @@ include_directories(
 add_executable(check_overlay main.cpp)
 
 target_link_libraries(check_overlay
-  ${catkin_LIBRARIES}
   ${pkg_a_LIBRARIES}
   ${pkg_b_LIBRARIES}
 )
